@@ -1,0 +1,5 @@
+C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\UE4Editor\Development\SnakeGame\Definitions.SnakeGame.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Source\SnakeGame/SnakeBase.h
+C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\UE4Editor\Inc\SnakeGame\SnakeBase.generated.h

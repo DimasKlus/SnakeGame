@@ -1,0 +1,3 @@
+C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\UE4Editor\Development\SnakeGame\Definitions.SnakeGame.h
+C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Source\SnakeGame\SnakeBase.h
+C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\UE4Editor\Inc\SnakeGame\SnakeBase.generated.h
