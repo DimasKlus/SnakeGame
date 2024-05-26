@@ -32,7 +32,7 @@ void ASnakeBase::Tick(float DeltaTime)
 
 void ASnakeBase::AddSnakeElement(int ElementsNum)
 {
-	for (int i = 0; i < ELementsNum; ++i)
+	for (int i = 0; i < SnakeElements.Num(); ++i)
 	{
 		FVector NewLocation(SnakeElements.Num()*ElementSize, 0, 0);
 		FTransform NewTransform(NewLocation);
@@ -43,7 +43,7 @@ void ASnakeBase::AddSnakeElement(int ElementsNum)
 void ASnakeBase::Move()
 {
 	FVector MovementVector(ForceInitToZero);
-    float MovementSpeed = ElementSize;
+     MovementSpeed = ElementSize;
 	
 	switch (LastMoveDirection)
 	{
