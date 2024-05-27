@@ -32,12 +32,18 @@ void ASnakeBase::Tick(float DeltaTime)
 
 void ASnakeBase::AddSnakeElement(int ElementsNum)
 {
-	for (int i = 0; i < SnakeElements.Num(); ++i)
+	for (int i = 0; i < ElementsNum; i++)
 	{
 		FVector NewLocation(SnakeElements.Num()*ElementSize, 0, 0);
 		FTransform NewTransform(NewLocation);
 		ASnakeElementBase* NewSnakeElem = GetWorld()->SpawnActor<ASnakeElementBase>(SnakeElementClass, NewTransform);
 		SnakeElements.Add(NewSnakeElem);
+		int32 ElemIndex = SnakeElements.Add(NewSnakeElem);
+		if (ElemIndex == 0)
+		{
+			NewSnakeElem->SetFirstELementType();
+		}
+
 	}
 }
 void ASnakeBase::Move()

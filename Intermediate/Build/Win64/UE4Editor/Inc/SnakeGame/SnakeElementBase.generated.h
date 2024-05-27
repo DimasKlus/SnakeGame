@@ -14,8 +14,20 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define SNAKEGAME_SnakeElementBase_generated_h
 
 #define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_SPARSE_DATA
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS \
+	virtual void SetFirstELementType_Implementation(); \
+ \
+	DECLARE_FUNCTION(execSetFirstELementType);
+
+
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	virtual void SetFirstELementType_Implementation(); \
+ \
+	DECLARE_FUNCTION(execSetFirstELementType);
+
+
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_EVENT_PARMS
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_CALLBACK_WRAPPERS
 #define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASnakeElementBase(); \
@@ -59,13 +71,17 @@ public: \
 
 
 #define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_PRIVATE_PROPERTY_OFFSET
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_12_PROLOG
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_12_PROLOG \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_EVENT_PARMS
+
+
 #define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_PRIVATE_PROPERTY_OFFSET \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_SPARSE_DATA \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_CALLBACK_WRAPPERS \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_INCLASS \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_STANDARD_CONSTRUCTORS \
 public: \
@@ -78,6 +94,7 @@ public: \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_PRIVATE_PROPERTY_OFFSET \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_SPARSE_DATA \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_CALLBACK_WRAPPERS \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_INCLASS_NO_PURE_DECLS \
 	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_ENHANCED_CONSTRUCTORS \
 private: \
