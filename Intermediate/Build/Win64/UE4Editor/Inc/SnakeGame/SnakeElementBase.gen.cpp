@@ -19,27 +19,27 @@ void EmptyLinkFunctionForGeneratedCodeSnakeElementBase() {}
 	UPackage* Z_Construct_UPackage__Script_SnakeGame();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 // End Cross Module References
-	DEFINE_FUNCTION(ASnakeElementBase::execSetFirstELementType)
+	DEFINE_FUNCTION(ASnakeElementBase::execSetFirstElementType)
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		P_THIS->SetFirstELementType_Implementation();
+		P_THIS->SetFirstElementType_Implementation();
 		P_NATIVE_END;
 	}
-	static FName NAME_ASnakeElementBase_SetFirstELementType = FName(TEXT("SetFirstELementType"));
-	void ASnakeElementBase::SetFirstELementType()
+	static FName NAME_ASnakeElementBase_SetFirstElementType = FName(TEXT("SetFirstElementType"));
+	void ASnakeElementBase::SetFirstElementType()
 	{
-		ProcessEvent(FindFunctionChecked(NAME_ASnakeElementBase_SetFirstELementType),NULL);
+		ProcessEvent(FindFunctionChecked(NAME_ASnakeElementBase_SetFirstElementType),NULL);
 	}
 	void ASnakeElementBase::StaticRegisterNativesASnakeElementBase()
 	{
 		UClass* Class = ASnakeElementBase::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
-			{ "SetFirstELementType", &ASnakeElementBase::execSetFirstELementType },
+			{ "SetFirstElementType", &ASnakeElementBase::execSetFirstElementType },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
-	struct Z_Construct_UFunction_ASnakeElementBase_SetFirstELementType_Statics
+	struct Z_Construct_UFunction_ASnakeElementBase_SetFirstElementType_Statics
 	{
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -47,17 +47,17 @@ void EmptyLinkFunctionForGeneratedCodeSnakeElementBase() {}
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASnakeElementBase_SetFirstELementType_Statics::Function_MetaDataParams[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASnakeElementBase_SetFirstElementType_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "SnakeElementBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASnakeElementBase_SetFirstELementType_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASnakeElementBase, nullptr, "SetFirstELementType", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020C00, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASnakeElementBase_SetFirstELementType_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeElementBase_SetFirstELementType_Statics::Function_MetaDataParams)) };
-	UFunction* Z_Construct_UFunction_ASnakeElementBase_SetFirstELementType()
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASnakeElementBase_SetFirstElementType_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASnakeElementBase, nullptr, "SetFirstElementType", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020C00, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASnakeElementBase_SetFirstElementType_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeElementBase_SetFirstElementType_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASnakeElementBase_SetFirstElementType()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASnakeElementBase_SetFirstELementType_Statics::FuncParams);
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASnakeElementBase_SetFirstElementType_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -85,7 +85,7 @@ void EmptyLinkFunctionForGeneratedCodeSnakeElementBase() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_SnakeGame,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ASnakeElementBase_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ASnakeElementBase_SetFirstELementType, "SetFirstELementType" }, // 1458517721
+		{ &Z_Construct_UFunction_ASnakeElementBase_SetFirstElementType, "SetFirstElementType" }, // 2325014868
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASnakeElementBase_Statics::Class_MetaDataParams[] = {
@@ -131,7 +131,7 @@ void EmptyLinkFunctionForGeneratedCodeSnakeElementBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASnakeElementBase, 1412825776);
+	IMPLEMENT_CLASS(ASnakeElementBase, 2187846616);
 	template<> SNAKEGAME_API UClass* StaticClass<ASnakeElementBase>()
 	{
 		return ASnakeElementBase::StaticClass();

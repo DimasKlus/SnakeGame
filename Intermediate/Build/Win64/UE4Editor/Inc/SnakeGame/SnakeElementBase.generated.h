@@ -15,15 +15,14 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_SPARSE_DATA
 #define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS \
-	virtual void SetFirstELementType_Implementation(); \
+	virtual void SetFirstElementType_Implementation(); \
  \
-	DECLARE_FUNCTION(execSetFirstELementType);
+	DECLARE_FUNCTION(execSetFirstElementType);
 
 
 #define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	virtual void SetFirstELementType_Implementation(); \
  \
-	DECLARE_FUNCTION(execSetFirstELementType);
+	DECLARE_FUNCTION(execSetFirstElementType);
 
 
 #define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_EVENT_PARMS

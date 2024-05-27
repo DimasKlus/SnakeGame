@@ -30,6 +30,8 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	
 	UFUNCTION(BlueprintNativeEvent)
-	void SetFirstELementType();
-	void SetFirstElementType_Implementation();
+	void SetFirstElementType();
+    void SetFirstElementType_Implementation(); 
+	
+
 };
