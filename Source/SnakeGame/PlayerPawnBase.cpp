@@ -6,6 +6,8 @@
 #include "SnakeBase.h"
 #include "Components/InputComponent.h"
 
+
+
 // Sets default values
 APlayerPawnBase::APlayerPawnBase()
 {
@@ -30,6 +32,7 @@ void APlayerPawnBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	stop = true;
 }
 
 // Called to bind functionality to input
@@ -47,31 +50,39 @@ void APlayerPawnBase::CreateSnakeActor()
 
 void APlayerPawnBase::HandlePlayerVerticalInput(float value)
 {
-	if (IsValid(SnakeActor))
-	{
-		if (value > 0 && SnakeActor->LastMoveDirection != EmovementDirection::DOWN)
+
+		if (IsValid(SnakeActor))
 		{
-			SnakeActor->LastMoveDirection = EmovementDirection::UP;
+			if (value > 0 && SnakeActor->LastMoveDirection != EmovementDirection::DOWN)
+			{
+
+				SnakeActor->LastMoveDirection = EmovementDirection::UP;
+			}
+			else if (value < 0 && SnakeActor->LastMoveDirection != EmovementDirection::UP)
+			{
+				SnakeActor->LastMoveDirection = EmovementDirection::DOWN;
+			}
 		}
-		else if (value < 0 && SnakeActor->LastMoveDirection != EmovementDirection::UP)
-		{
-			SnakeActor->LastMoveDirection = EmovementDirection::DOWN;
-		}
-	}
+	
 }
 
 void APlayerPawnBase::HandlePlayerHorizontalInput(float value)
 {
-	if (IsValid(SnakeActor))
+
+	if (stop = true)
 	{
-		if (value > 0 && SnakeActor->LastMoveDirection != EmovementDirection::LEFT)
+		if (IsValid(SnakeActor))
 		{
-			SnakeActor->LastMoveDirection = EmovementDirection::RIGHT;
-		}
-		else if (value < 0 && SnakeActor->LastMoveDirection != EmovementDirection::RIGHT)
-		{
-			SnakeActor->LastMoveDirection = EmovementDirection::LEFT;
+			if (value > 0 && SnakeActor->LastMoveDirection != EmovementDirection::LEFT)
+			{
+				SnakeActor->LastMoveDirection = EmovementDirection::RIGHT;
+				stop = false;
+			}
+			else if (value < 0 && SnakeActor->LastMoveDirection != EmovementDirection::RIGHT)
+			{
+				SnakeActor->LastMoveDirection = EmovementDirection::LEFT;
+				stop = false;
+			}
 		}
 	}
 }
-

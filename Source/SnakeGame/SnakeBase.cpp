@@ -4,6 +4,9 @@
 #include "SnakeBase.h"
 #include "SnakeElementBase.h"
 
+bool CanChangeDirection;
+
+
 // Sets default values
 ASnakeBase::ASnakeBase()
 {
@@ -22,13 +25,6 @@ void ASnakeBase::BeginPlay()
 	AddSnakeElement(5);	
 }
 
-// Called every frame
-void ASnakeBase::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-	Move();
-
-}
 
 void ASnakeBase::AddSnakeElement(int ElementsNum)
 {

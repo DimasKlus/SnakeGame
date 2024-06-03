@@ -28,6 +28,10 @@ public:
 	TSubclassOf <ASnakeBase> SnakeActorClass;
 
 
+	bool stop;
+
+	
+
 
 
 protected:

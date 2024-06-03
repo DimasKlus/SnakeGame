@@ -50,7 +50,12 @@ protected:
 
 public:	
 	// Called every frame
-	virtual void Tick(float DeltaTime) override;
+	// Called every frame
+	virtual void Tick(float DeltaTime) override
+	{
+		Super::Tick(DeltaTime);
+		Move();
+	}
 
 	void AddSnakeElement(int ELementsNum = 1);
 
