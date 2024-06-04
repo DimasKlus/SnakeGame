@@ -4,7 +4,6 @@
 #include "SnakeBase.h"
 #include "SnakeElementBase.h"
 
-bool CanChangeDirection;
 
 
 // Sets default values
@@ -44,10 +43,11 @@ void ASnakeBase::AddSnakeElement(int ElementsNum)
 void ASnakeBase::Move()
 {
 	FVector MovementVector(ForceInitToZero);
-     MovementSpeed = ElementSize;
-	
+	MovementSpeed = ElementSize;
+
 	switch (LastMoveDirection)
 	{
+
 	case EmovementDirection::UP:
 		MovementVector.X += MovementSpeed;
 		break;
@@ -70,7 +70,7 @@ void ASnakeBase::Move()
 		CurrentElement->SetActorLocation(PrevLocation);
 	}
 
- SnakeElements[0]->AddActorWorldOffset(MovementVector);
-}
+	SnakeElements[0]->AddActorWorldOffset(MovementVector);
+	CanTurn = true;
 	
-
+}

@@ -37,6 +37,9 @@ public:
 	UPROPERTY(EditDefaultsOnly)
 	float MovementSpeed;
 
+	UPROPERTY()
+	bool CanTurn = true;
+
 
 	UPROPERTY()
 	TArray<ASnakeElementBase*> SnakeElements;
