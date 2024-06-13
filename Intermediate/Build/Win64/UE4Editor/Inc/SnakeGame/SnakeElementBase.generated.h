@@ -8,44 +8,53 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UPrimitiveComponent;
+class AActor;
+struct FHitResult;
 #ifdef SNAKEGAME_SnakeElementBase_generated_h
 #error "SnakeElementBase.generated.h already included, missing '#pragma once' in SnakeElementBase.h"
 #endif
 #define SNAKEGAME_SnakeElementBase_generated_h
 
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_SPARSE_DATA
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS \
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_SPARSE_DATA
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_RPC_WRAPPERS \
 	virtual void SetFirstElementType_Implementation(); \
  \
+	DECLARE_FUNCTION(execToggleCollision); \
+	DECLARE_FUNCTION(execHandleBeginOverlap); \
 	DECLARE_FUNCTION(execSetFirstElementType);
 
 
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execToggleCollision); \
+	DECLARE_FUNCTION(execHandleBeginOverlap); \
 	DECLARE_FUNCTION(execSetFirstElementType);
 
 
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_EVENT_PARMS
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_CALLBACK_WRAPPERS
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_INCLASS_NO_PURE_DECLS \
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_EVENT_PARMS
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_CALLBACK_WRAPPERS
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASnakeElementBase(); \
 	friend struct Z_Construct_UClass_ASnakeElementBase_Statics; \
 public: \
 	DECLARE_CLASS(ASnakeElementBase, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/SnakeGame"), NO_API) \
-	DECLARE_SERIALIZER(ASnakeElementBase)
+	DECLARE_SERIALIZER(ASnakeElementBase) \
+	virtual UObject* _getUObject() const override { return const_cast<ASnakeElementBase*>(this); }
 
 
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_INCLASS \
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesASnakeElementBase(); \
 	friend struct Z_Construct_UClass_ASnakeElementBase_Statics; \
 public: \
 	DECLARE_CLASS(ASnakeElementBase, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/SnakeGame"), NO_API) \
-	DECLARE_SERIALIZER(ASnakeElementBase)
+	DECLARE_SERIALIZER(ASnakeElementBase) \
+	virtual UObject* _getUObject() const override { return const_cast<ASnakeElementBase*>(this); }
 
 
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_STANDARD_CONSTRUCTORS \
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ASnakeElementBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASnakeElementBase) \
@@ -58,7 +67,7 @@ private: \
 public:
 
 
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_ENHANCED_CONSTRUCTORS \
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ASnakeElementBase(ASnakeElementBase&&); \
@@ -69,33 +78,33 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASnakeElementBase)
 
 
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_PRIVATE_PROPERTY_OFFSET
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_12_PROLOG \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_EVENT_PARMS
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_PRIVATE_PROPERTY_OFFSET
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_14_PROLOG \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_EVENT_PARMS
 
 
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_GENERATED_BODY_LEGACY \
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_SPARSE_DATA \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_CALLBACK_WRAPPERS \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_INCLASS \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_STANDARD_CONSTRUCTORS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_PRIVATE_PROPERTY_OFFSET \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_SPARSE_DATA \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_RPC_WRAPPERS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_CALLBACK_WRAPPERS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_INCLASS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_GENERATED_BODY \
+#define SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_SPARSE_DATA \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_CALLBACK_WRAPPERS \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_INCLASS_NO_PURE_DECLS \
-	SnakeGame_Source_SnakeGame_SnakeElementBase_h_15_ENHANCED_CONSTRUCTORS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_PRIVATE_PROPERTY_OFFSET \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_SPARSE_DATA \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_CALLBACK_WRAPPERS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_INCLASS_NO_PURE_DECLS \
+	SnakeGame_Source_SnakeGame_SnakeElementBase_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

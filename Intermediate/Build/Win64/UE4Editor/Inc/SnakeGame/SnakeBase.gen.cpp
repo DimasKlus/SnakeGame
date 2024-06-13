@@ -18,8 +18,9 @@ void EmptyLinkFunctionForGeneratedCodeSnakeBase() {}
 	SNAKEGAME_API UClass* Z_Construct_UClass_ASnakeBase_NoRegister();
 	SNAKEGAME_API UClass* Z_Construct_UClass_ASnakeBase();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
-	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 	SNAKEGAME_API UClass* Z_Construct_UClass_ASnakeElementBase_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 // End Cross Module References
 	static UEnum* EmovementDirection_StaticEnum()
 	{
@@ -78,8 +79,130 @@ void EmptyLinkFunctionForGeneratedCodeSnakeBase() {}
 		}
 		return ReturnEnum;
 	}
+	DEFINE_FUNCTION(ASnakeBase::execSnakeElementOverlap)
+	{
+		P_GET_OBJECT(ASnakeElementBase,Z_Param_OverlappedElement);
+		P_GET_OBJECT(AActor,Z_Param_Other);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SnakeElementOverlap(Z_Param_OverlappedElement,Z_Param_Other);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ASnakeBase::execMove)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Move();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(ASnakeBase::execAddSnakeElement)
+	{
+		P_GET_PROPERTY(FIntProperty,Z_Param_ELementsNum);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->AddSnakeElement(Z_Param_ELementsNum);
+		P_NATIVE_END;
+	}
 	void ASnakeBase::StaticRegisterNativesASnakeBase()
 	{
+		UClass* Class = ASnakeBase::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "AddSnakeElement", &ASnakeBase::execAddSnakeElement },
+			{ "Move", &ASnakeBase::execMove },
+			{ "SnakeElementOverlap", &ASnakeBase::execSnakeElementOverlap },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics
+	{
+		struct SnakeBase_eventAddSnakeElement_Parms
+		{
+			int32 ELementsNum;
+		};
+		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_ELementsNum;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::NewProp_ELementsNum = { "ELementsNum", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnakeBase_eventAddSnakeElement_Parms, ELementsNum), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::NewProp_ELementsNum,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::Function_MetaDataParams[] = {
+		{ "CPP_Default_ELementsNum", "1" },
+		{ "ModuleRelativePath", "SnakeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASnakeBase, nullptr, "AddSnakeElement", nullptr, nullptr, sizeof(SnakeBase_eventAddSnakeElement_Parms), Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASnakeBase_AddSnakeElement()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASnakeBase_AddSnakeElement_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ASnakeBase_Move_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASnakeBase_Move_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "SnakeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASnakeBase_Move_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASnakeBase, nullptr, "Move", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASnakeBase_Move_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeBase_Move_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASnakeBase_Move()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASnakeBase_Move_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics
+	{
+		struct SnakeBase_eventSnakeElementOverlap_Parms
+		{
+			ASnakeElementBase* OverlappedElement;
+			AActor* Other;
+		};
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_OverlappedElement;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Other;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::NewProp_OverlappedElement = { "OverlappedElement", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnakeBase_eventSnakeElementOverlap_Parms, OverlappedElement), Z_Construct_UClass_ASnakeElementBase_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::NewProp_Other = { "Other", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SnakeBase_eventSnakeElementOverlap_Parms, Other), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::NewProp_OverlappedElement,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::NewProp_Other,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "SnakeBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ASnakeBase, nullptr, "SnakeElementOverlap", nullptr, nullptr, sizeof(SnakeBase_eventSnakeElementOverlap_Parms), Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_ASnakeBase_NoRegister()
 	{
@@ -88,6 +211,7 @@ void EmptyLinkFunctionForGeneratedCodeSnakeBase() {}
 	struct Z_Construct_UClass_ASnakeBase_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -125,6 +249,11 @@ void EmptyLinkFunctionForGeneratedCodeSnakeBase() {}
 	UObject* (*const Z_Construct_UClass_ASnakeBase_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_AActor,
 		(UObject* (*)())Z_Construct_UPackage__Script_SnakeGame,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_ASnakeBase_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_ASnakeBase_AddSnakeElement, "AddSnakeElement" }, // 1929881451
+		{ &Z_Construct_UFunction_ASnakeBase_Move, "Move" }, // 3834514094
+		{ &Z_Construct_UFunction_ASnakeBase_SnakeElementOverlap, "SnakeElementOverlap" }, // 3657999664
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASnakeBase_Statics::Class_MetaDataParams[] = {
@@ -195,11 +324,11 @@ void EmptyLinkFunctionForGeneratedCodeSnakeBase() {}
 		"Engine",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		Z_Construct_UClass_ASnakeBase_Statics::PropPointers,
 		nullptr,
 		UE_ARRAY_COUNT(DependentSingletons),
-		0,
+		UE_ARRAY_COUNT(FuncInfo),
 		UE_ARRAY_COUNT(Z_Construct_UClass_ASnakeBase_Statics::PropPointers),
 		0,
 		0x009000A4u,
@@ -214,7 +343,7 @@ void EmptyLinkFunctionForGeneratedCodeSnakeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASnakeBase, 1956540192);
+	IMPLEMENT_CLASS(ASnakeBase, 1494313624);
 	template<> SNAKEGAME_API UClass* StaticClass<ASnakeBase>()
 	{
 		return ASnakeBase::StaticClass();

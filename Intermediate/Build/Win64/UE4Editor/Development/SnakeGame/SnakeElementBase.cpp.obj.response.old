@@ -262,8 +262,11 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.22621.0\winrt"
+/FI"C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\SnakeGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\SnakeGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\SnakeGameEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
 "C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Source\SnakeGame\SnakeElementBase.cpp"
-/FI"C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\UE4Editor\Development\SnakeGame\Definitions.h"
+/FI"C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\UE4Editor\Development\SnakeGame\Definitions.SnakeGame.h"
 /Fo"C:\Users\Dmitry_Klus\Documents\Unreal Projects\SnakeGame\Intermediate\Build\Win64\UE4Editor\Development\SnakeGame\SnakeElementBase.cpp.obj"
 /TP
 /GR-

@@ -59,8 +59,14 @@ public:
 		Super::Tick(DeltaTime);
 		Move();
 	}
-
+	UFUNCTION(BlueprintCallable)
 	void AddSnakeElement(int ELementsNum = 1);
 
+	UFUNCTION(BlueprintCallable)
 	void Move();
+
+	UFUNCTION()
+	void SnakeElementOverlap(ASnakeElementBase* OverlappedElement, AActor* Other);
+
+
 };
