@@ -3,6 +3,7 @@
 
 #include "SnakeElementBase.h"
 #include "Engine/Classes/Components/StaticMeshComponent.h"
+#include "SnakeBase.h"
 
 
 
@@ -47,7 +48,7 @@ void ASnakeElementBase::SetFirstElementType_Implementation()
 
 void ASnakeElementBase::Interact(AActor* Interactor, bool bIsHead)
 {
-	auto <Snake> = Cast<ASnakeBase>(Interactor);
+	auto Snake = Cast <ASnakeBase> (Interactor);
 	if (IsValid(Snake))
 		{
 			Snake->Destroy();
